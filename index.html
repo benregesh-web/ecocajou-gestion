@@ -9,42 +9,31 @@
 </head>
 
 <body>
-
     <div id="loginScreen">
         <div class="login-box">
             <h2>🔒 ECOCAJOU</h2>
-            <p>Code d'accès usine</p>
-            <input type="password" id="siteCode" placeholder="Code site">
-            <button class="btn btn-blue" onclick="login()">Entrer</button>
-            <p style="font-size:11px;margin-top:10px;opacity:.7"></p>
+            <p>Code d'accès usine</p><input type="password" id="siteCode" placeholder="Code site"><button
+                class="btn btn-blue" onclick="login()">Entrer</button>
         </div>
     </div>
-
     <div id="app" style="display:none">
         <header>
             <div>
                 <h1>ECOCAJOU</h1><small id="dateJour">Chargement date...</small>
             </div>
-            <div><button class="btn btn-white" onclick="voirHistorique()">📚 Historique par Date</button> <button
-                    class="btn btn-white" onclick="exportExcel()">📥 Exporter</button> <button class="btn btn-white"
+            <div><button class="btn btn-white" onclick="voirHistorique()">📚 Historique</button><button
+                    class="btn btn-white" onclick="exportExcel()">📥 Exporter</button><button class="btn btn-white"
                     onclick="logout()">🔓</button></div>
         </header>
-
-        <div class="nav">
-            <button class="active" onclick="tab('stock',this)">📦 STOCK FINAL</button>
-            <button onclick="tab('entrees',this)">📥 ENTREES (Aujourd'hui)</button>
-            <button onclick="tab('sorties',this)">📤 SORTIES (Aujourd'hui)</button>
-            <button onclick="tab('articles',this)">📋 ARTICLES</button>
-            <button onclick="tab('agents',this)">👷 AGENTS</button>
-            <button onclick="tab('historique',this)">📚 ARCHIVE JOURNALIERE</button>
-        </div>
-
+        <div class="nav"><button class="active" onclick="tab('stock',this)">📦 STOCK FINAL</button><button
+                onclick="tab('entrees',this)">📥 ENTREES</button><button onclick="tab('sorties',this)">📤
+                SORTIES</button><button onclick="tab('articles',this)">📋 ARTICLES</button><button
+                onclick="tab('agents',this)">👷 AGENTS</button><button onclick="tab('historique',this)">📚
+                ARCHIVE</button></div>
         <div class="alert" id="alertBox"></div>
-
         <div id="stock" class="page">
             <div class="box">
-                <h3>STOCK FINAL - Calcul Auto</h3><input class="search" id="sStock"
-                    placeholder="🔍 Rechercher..." onkeyup="render()">
+                <h3>STOCK FINAL</h3><input class="search" id="sStock" placeholder="🔍 Rechercher..." onkeyup="render()">
                 <div class="table-wrap">
                     <table>
                         <thead>
@@ -65,19 +54,14 @@
                 </div>
             </div>
         </div>
-
         <div id="entrees" class="page" style="display:none">
             <div class="box">
-                <h3 id="titleEntree">ENTREES DU JOUR - <span id="dateEntree"></span> - Ajout en haut seulement</h3>
-                <div class="form">
-                    <select id="eCode"></select><input id="eQte" type="number" step="0.01" placeholder="QUANTITE"><input
-                        id="eUnite" readonly><input id="eFour" placeholder="FOURNISSEUR" style="grid-column:span 2">
-                    <button class="btn btn-blue" id="btnEntree" onclick="saveEntree()">+ Ajouter pour
-                        Aujourd'hui</button><button class="btn btn-white" id="btnCancelEntree" style="display:none"
-                        onclick="cancelEdit()">Annuler</button>
-                </div>
-                <p style="padding:8px 14px;font-size:11px;background:#e8f5e9">📅 Date automatique: aujourd'hui. Pas
-                    besoin de saisir la date.</p>
+                <h3 id="titleEntree">ENTREES DU JOUR - <span id="dateEntree"></span></h3>
+                <div class="form"><select id="eCode"></select><input id="eQte" type="number" step="0.01"
+                        placeholder="QUANTITE"><input id="eUnite" readonly><input id="eFour" placeholder="FOURNISSEUR"
+                        style="grid-column:span 2"><button class="btn btn-blue" id="btnEntree" onclick="saveEntree()">+
+                        Ajouter</button><button class="btn btn-white" id="btnCancelEntree" style="display:none"
+                        onclick="cancelEdit()">Annuler</button></div>
             </div>
             <div class="box">
                 <div class="table-wrap">
@@ -98,20 +82,16 @@
                 </div>
             </div>
             <div class="box" style="padding:14px;display:flex;gap:10px"><button class="btn btn-blue"
-                    onclick="cloturerJournee()">🔒 Clôturer la journée d'aujourd'hui → Archiver</button><small>Une fois
-                    clôturé, ça part dans ARCHIVE et demain tu recommences à zéro pour les entrées/sorties du jour, mais
-                    le STOCK FINAL garde tout.</small></div>
+                    onclick="cloturerJournee()">🔒 Clôturer la journée → Archiver</button></div>
         </div>
-
         <div id="sorties" class="page" style="display:none">
             <div class="box">
                 <h3>SORTIES DU JOUR - <span id="dateSortie"></span></h3>
                 <div class="form"><select id="sCode"></select><input id="sQte" type="number" step="0.01"
                         placeholder="QTE"><input id="sUnite" readonly><select id="sMat"></select><input id="sNom"
                         readonly><input id="sPrenom" readonly><input id="sSection" readonly><input id="sRef"
-                        placeholder="REFERENCE"><button class="btn btn-blue" onclick="addSortie()">- Sortie
-                        Aujourd'hui</button></div>
-                <p style="padding:8px 14px;font-size:11px;background:#ffebee">📅 Date automatique: aujourd'hui.</p>
+                        placeholder="REFERENCE"><button class="btn btn-blue" onclick="addSortie()">- Sortie</button>
+                </div>
             </div>
             <div class="box">
                 <div class="table-wrap">
@@ -135,19 +115,27 @@
 
         <div id="articles" class="page" style="display:none">
             <div class="box">
-                <h3 id="titleArticle">BASE ARTICLES - Ajout </h3>
-                <div class="form"><select id="aFam">
+                <h3 id="titleArticle">BASE ARTICLES</h3>
+                <div class="form">
+                    <select id="aFam">
                         <option>PRODUITS CHIMIQUES</option>
                         <option>HYGIENE</option>
-                        <option>BUREAUTIQUE</option>
+                        <option>BUREAU</option>
                         <option>EMBALLAGE</option>
                         <option>EPI</option>
-                        <option>AUTRE</option>
-                    </select><input id="aCode" placeholder="CODE"><input id="aDes" placeholder="DESIGNATION"><input
-                        id="aUnite" placeholder="UNITE"><input id="aAlerte" type="number" placeholder="ALERTE"><input
-                        id="aInit" type="number" placeholder="INITIAL"><button class="btn btn-blue" id="btnArticle"
-                        onclick="saveArticle()">+ Ajouter Article</button><button class="btn btn-white"
-                        id="btnCancelArticle" style="display:none" onclick="cancelEdit()">Annuler</button></div>
+                        <option>ERO</option>
+                    </select>
+                    <select id="aCode"></select>
+                    <input id="aDes" placeholder="DESIGNATION" readonly style="background:#e8f5e9">
+                    <input id="aUnite" placeholder="UNITE" readonly style="background:#e8f5e9">
+                    <input id="aAlerte" type="number" placeholder="ALERTE">
+                    <input id="aInit" type="number" placeholder="INITIAL">
+                    <button class="btn btn-blue" id="btnArticle" onclick="saveArticle()">+ Ajouter Article</button>
+                    <button class="btn btn-white" id="btnCancelArticle" style="display:none"
+                        onclick="cancelEdit()">Annuler</button>
+                </div>
+                <p style="padding:8px 14px;font-size:11px;background:#fff3cd">👉 Choisis CODE = PCH001 etc... la
+                    DESIGNATION et UNITE se remplissent automatique</p>
             </div>
             <div class="box">
                 <div class="table-wrap">
@@ -174,26 +162,69 @@
                 <h3 id="titleAgent">LISTE AGENTS</h3>
                 <div class="form"><input id="agCode" placeholder="CODE"><input id="agNom" placeholder="NOM"><input
                         id="agPrenom" placeholder="PRENOMS"><select id="agSection">
-                    <option>ENTRETIEN</option>
-                    <option>CHAUFFEUR</option>
-                    <option>Coque</option>
-                    <option>Lavage</option>
-                    <option>Etuve</option>
-                    <option>Administration</option>
-                    <option>CALIBRAGE</option>
-                    <option>CUISSON</option>
-                    <option>DECO</option>
-                    <option>DPM</option>
-                    <option>CLASS MNL</option>
-                    <option>CLASS AUTO</option>
-                    <option>DP AUTO</option>
-                    <option>EMBALLAGE L1</option>
-                    <option>EMBALLAGE L2</option>
-                    <option>FOUR</option>
-                    <option>CANTINE</option>
-                    <option>MAINTENANCE</option>
-                    <option>BUANDERIE</option>
-                    <option>CHAUDIERE</option>
+                        <option>ADMINISTRATION</option>
+                        <option>BUANDERIE</option>
+                        <option>CALIBRAGE</option>
+                        <option>CANTINE</option>
+                        <option>CARISTE</option>
+                         <option>CHAUDIERE</option>
+                        <option>CHAUFFEUR</option>
+                        <option>CLASSIFICATION AUTO</option>
+                        <option>CLASSIFICATION MANUELLE</option>
+                        <option>CONCASSAGE</option>
+                        <option>CONTROLEUR / FOUR</option>
+                        <option>COQUE</option>
+                        <option>Correction scooping</option>
+                        <option>CPA / MAINTENANCE</option>
+                        <option>CUISSON</option>
+                        <option>DAF</option>
+                        <option>DECO / FEMME</option>
+                        <option>DECO / HOMME</option>
+                        <option>DEPELLICULAGE AUTOMATIQUE</option>
+                        <option>DIRECTRICE EXPLOITATION</option>
+                        <option>DISTRIBUTEUR DE PRODUITS DP Manuel</option>
+                        <option>DP Manuel</option>
+                        <option>DP Manuel / ANNEXE</option>
+                        <option>DP Manuel / Correction</option>
+                        <option>DP Manuel / Entretien</option>
+                        <option>EMBALLAGE </option>
+                        <option>EMBALLAGE / ENTRETIEN</option>
+                        <option>ENTRETIEN</option>
+                        <option>ENTRETIEN / ADMINISTRATION</option>
+                        <option>ENTRETIEN / DECO</option>
+                        <option>ENTRETIEN / VESTIAIRE ZONE ROUGE</option>
+                        <option>ENTRETIEN / ZONE BLANCHE</option>
+                        <option>ENTRETIEN / ZONE NON BATI</option>
+                        <option>ENTRETIEN / VESTIARE ZONE BLANCHE</option>
+                        <option>EQUIPE PHYTO</option>
+                        <option>ETUVAGE</option>
+                        <option>GESTIONNAIRE / MAGASIN PIECES</option>
+                        <option>H</option>
+                        <option>HYGENE</option>
+                        <option>INATIF</option>
+                        <option>INATIVE</option>
+                        <option>LAVAGE EQUIPEMENTS DE PRODUCTION</option>
+                        <option>MAGASIN / NOIX BRUTE</option>
+                        <option>MAGASIN PRODUITS FINIS</option>
+                        <option>MAINTENANCE</option>
+                        <option>MIPS / RESPONSABLE NIAMATOGOLA</option>
+                        <option>OPERATEUR / PESE</option>
+                        <option>QUALITE / CLASSIFICATION</option>
+                        <option>QUALITE / DECO</option>
+                        <option>QUALITE / EMBALLAGE</option>
+                        <option>QUALITE / FOUR</option>
+                        <option>QUALITE / NOIX BRUTE</option>
+                        <option>R BTP</option>
+                        <option>RESPONSABLE MAINTENANCE</option>
+                        <option>RESPONSSABLE PRODUCTION</option>
+                        <option>RESSOURCES HUMAINES</option>
+                        <option>RQHSE</option>
+                        <option>SCOOPING</option>
+                        <option>SCOOPING / CORRECTION</option>
+                        <option>SECURITE</option>
+                        <option>SUPERVISEUR / CUISSON</option>
+                        <option>SUPERVISEUR / DECO</option>
+                        
                     </select><button class="btn btn-blue" id="btnAgent" onclick="saveAgent()">+ Ajouter
                         Agent</button><button class="btn btn-white" id="btnCancelAgent" style="display:none"
                         onclick="cancelEdit()">Annuler</button></div>
@@ -215,14 +246,12 @@
                 </div>
             </div>
         </div>
-
         <div id="historique" class="page" style="display:none">
             <div class="box">
-                <h3>📚 ARCHIVE JOURNALIERE - Tout ce qui est clôturé par jour</h3>
+                <h3>📚 ARCHIVE</h3>
                 <div class="form"><input type="date" id="hDate" onchange="renderHistorique()"><button
-                        class="btn btn-blue" onclick="renderHistorique()">Voir ce jour</button><button
-                        class="btn btn-white"
-                        onclick="document.getElementById('hDate').value='';renderHistorique()">Voir Tout</button></div>
+                        class="btn btn-blue" onclick="renderHistorique()">Voir</button><button class="btn btn-white"
+                        onclick="document.getElementById('hDate').value='';renderHistorique()">Tout</button></div>
             </div>
             <div class="box">
                 <h3>Entrées Archivées</h3>
@@ -260,8 +289,14 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+        import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+        const firebaseConfig = { apiKey: "AIzaSyBrZRbqQf1XyquJZ43lIX1MG0utaoPbeNE", authDomain: "ecocajou-gestion.firebaseapp.com", databaseURL: "https://ecocajou-gestion-default-rtdb.firebaseio.com", projectId: "ecocajou-gestion", storageBucket: "ecocajou-gestion.firebasestorage.app", messagingSenderId: "587096683474", appId: "1:587096683474:web:3e45c928103b43b9c58e0b" };
+        const app = initializeApp(firebaseConfig); const db = getDatabase(app);
+        window.firebaseDB = db; window.firebaseRef = ref; window.firebaseSet = set; window.firebaseGet = get;
+    </script>
     <script src="script.js"></script>
 </body>
 
