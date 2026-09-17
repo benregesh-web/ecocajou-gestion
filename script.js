@@ -157,6 +157,17 @@ function delEntree(i) { if (!checkCode()) return; if (confirm("Supprimer?")) { e
 function editAgent(i) { if (!checkCode()) return; let a = agents[i]; agCode.value = a.code; agNom.value = a.nom; agPrenom.value = a.prenom; agSection.value = a.section; editIndex = i; editType = 'agent'; btnAgent.innerText = '✏️ Modifier Agent'; btnCancelAgent.style.display = 'block'; titleAgent.innerText = 'MODIFIER AGENT - ' + a.code; tab('agents', document.querySelectorAll('.nav button')[4]); }
 function saveAgent() { if (editType === 'agent') { if (!checkCode()) return; agents[editIndex] = { code: agCode.value.toUpperCase(), nom: agNom.value.toUpperCase(), prenom: agPrenom.value.toUpperCase(), section: agSection.value.toUpperCase() }; cancelEdit(); save(); return; } let o = { code: agCode.value.toUpperCase().trim(), nom: agNom.value.toUpperCase().trim(), prenom: agPrenom.value.toUpperCase().trim(), section: agSection.value.toUpperCase().trim() }; if (!o.code || !o.nom) return alert("CODE+NOM"); agents.unshift(o); save(); agCode.value = ''; agNom.value = ''; agPrenom.value = ''; }
 function delAgent(i) { if (!checkCode()) return; if (confirm("Supprimer?")) { agents.splice(i, 1); save(); } }
+function supprimerTousAgents() {
+  if (agents.length === 0) { alert("Aucun agent à supprimer"); return; }
+  if (confirm("ATTENTION! Tu vas supprimer les " + agents.length + " agents définitivement! Tu es sûr?")) {
+    if (confirm("Dernière confirmation: SUPPRIMER TOUT?")) {
+      agents = [];
+      save();
+      render();
+      alert("Tous les agents ont été supprimés!");
+    }
+  }
+}
 function cancelEdit() { editIndex = null; editType = null; btnArticle.innerText = '+ Ajouter Article'; btnEntree.innerText = '+ Ajouter pour Aujourd\'hui'; btnAgent.innerText = '+ Ajouter Agent'; btnCancelArticle.style.display = 'none'; btnCancelEntree.style.display = 'none'; btnCancelAgent.style.display = 'none'; titleArticle.innerText = 'BASE ARTICLES'; titleEntree.innerText = 'ENTREES DU JOUR - ' + formatToday(); titleAgent.innerText = 'LISTE AGENTS'; if (document.getElementById('aCode')) document.getElementById('aCode').value = ''; }
 function addSortie() { let code = sCode.value; let art = articles.find(a => a.code === code) || CATALOGUE[code]; let ag = agents.find(a => a.code === sMat.value); let o = { date: getToday(), code, des: art ? art.des : code, qte: parseFloat(sQte.value) || 0, unite: sUnite.value || art?.unite || '', mat: sMat.value, nom: ag ? ag.nom : sNom.value, prenom: ag ? ag.prenom : sPrenom.value, section: ag ? ag.section : sSection.value, ref: sRef.value }; if (!o.qte) return alert("Qte"); sorties.unshift(o); save(); }
 function delSortie(i) { if (!checkCode()) return; if (confirm("Supprimer sortie?")) { sorties.splice(i, 1); save(); } }

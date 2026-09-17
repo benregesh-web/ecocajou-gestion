@@ -233,6 +233,8 @@
                     <button class="btn btn-blue" id="btnAgent" onclick="saveAgent()">+ Ajouter Agent</button>
                     <button class="btn" onclick="document.getElementById('fileImportAgents').click()"
                         style="background:#16a34a;color:white;">📥 Importer Excel</button>
+                    <button onclick="supprimerTousAgents()" style="background:#d00000;color:white;margin-left:10px;">🗑️
+                        Supprimer tous les agents</button>
                     <input type="file" id="fileImportAgents" style="display:none" accept=".csv,.xlsx,.xls"
                         onchange="importerAgentsExcel(event)">
                 </div>
@@ -306,7 +308,7 @@
             const app = initializeApp(firebaseConfig); const db = getDatabase(app);
             window.firebaseDB = db; window.firebaseRef = ref; window.firebaseSet = set; window.firebaseGet = get;
         </script>
-       
+
         <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
         <script src="script.js"></script>
 </body>
