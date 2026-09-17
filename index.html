@@ -160,14 +160,17 @@
         <div id="agents" class="page" style="display:none">
             <div class="box">
                 <h3 id="titleAgent">LISTE AGENTS</h3>
-                <div class="form"><input id="agCode" placeholder="CODE"><input id="agNom" placeholder="NOM"><input
-                        id="agPrenom" placeholder="PRENOMS"><select id="agSection">
+                <div class="form" style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+                    <input id="agCode" placeholder="CODE">
+                    <input id="agNom" placeholder="NOM">
+                    <input id="agPrenom" placeholder="PRENOMS">
+                    <select id="agSection">
                         <option>ADMINISTRATION</option>
                         <option>BUANDERIE</option>
                         <option>CALIBRAGE</option>
                         <option>CANTINE</option>
                         <option>CARISTE</option>
-                         <option>CHAUDIERE</option>
+                        <option>CHAUDIERE</option>
                         <option>CHAUFFEUR</option>
                         <option>CLASSIFICATION AUTO</option>
                         <option>CLASSIFICATION MANUELLE</option>
@@ -224,80 +227,88 @@
                         <option>SECURITE</option>
                         <option>SUPERVISEUR / CUISSON</option>
                         <option>SUPERVISEUR / DECO</option>
-                        
-                    </select><button class="btn btn-blue" id="btnAgent" onclick="saveAgent()">+ Ajouter
-                        Agent</button><button class="btn btn-white" id="btnCancelAgent" style="display:none"
-                        onclick="cancelEdit()">Annuler</button></div>
+
+                    </select>
+
+                    <button class="btn btn-blue" id="btnAgent" onclick="saveAgent()">+ Ajouter Agent</button>
+                    <button class="btn" onclick="document.getElementById('fileImportAgents').click()"
+                        style="background:#16a34a;color:white;">📥 Importer Excel</button>
+                    <input type="file" id="fileImportAgents" style="display:none" accept=".csv,.xlsx,.xls"
+                        onchange="importerAgentsExcel(event)">
+                </div>
+
+                <div class="box">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>CODE</th>
+                                    <th>NOM</th>
+                                    <th>PRENOMS</th>
+                                    <th>SECTION</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tAgents"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="box">
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>CODE</th>
-                                <th>NOM</th>
-                                <th>PRENOMS</th>
-                                <th>SECTION</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tAgents"></tbody>
-                    </table>
+            <div id="historique" class="page" style="display:none">
+                <div class="box">
+                    <h3>📚 ARCHIVE</h3>
+                    <div class="form"><input type="date" id="hDate" onchange="renderHistorique()"><button
+                            class="btn btn-blue" onclick="renderHistorique()">Voir</button><button class="btn btn-white"
+                            onclick="document.getElementById('hDate').value='';renderHistorique()">Tout</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Entrées Archivées</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DATE</th>
+                                    <th>CODE</th>
+                                    <th>DESIGNATION</th>
+                                    <th>QTE</th>
+                                    <th>FOURNISSEUR</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tHistEntrees"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>Sorties Archivées</h3>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DATE</th>
+                                    <th>CODE</th>
+                                    <th>QTE</th>
+                                    <th>MATRICULE</th>
+                                    <th>NOM</th>
+                                    <th>SECTION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tHistSorties"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="historique" class="page" style="display:none">
-            <div class="box">
-                <h3>📚 ARCHIVE</h3>
-                <div class="form"><input type="date" id="hDate" onchange="renderHistorique()"><button
-                        class="btn btn-blue" onclick="renderHistorique()">Voir</button><button class="btn btn-white"
-                        onclick="document.getElementById('hDate').value='';renderHistorique()">Tout</button></div>
-            </div>
-            <div class="box">
-                <h3>Entrées Archivées</h3>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>DATE</th>
-                                <th>CODE</th>
-                                <th>DESIGNATION</th>
-                                <th>QTE</th>
-                                <th>FOURNISSEUR</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tHistEntrees"></tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="box">
-                <h3>Sorties Archivées</h3>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>DATE</th>
-                                <th>CODE</th>
-                                <th>QTE</th>
-                                <th>MATRICULE</th>
-                                <th>NOM</th>
-                                <th>SECTION</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tHistSorties"></tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-        import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-        const firebaseConfig = { apiKey: "AIzaSyBrZRbqQf1XyquJZ43lIX1MG0utaoPbeNE", authDomain: "ecocajou-gestion.firebaseapp.com", databaseURL: "https://ecocajou-gestion-default-rtdb.firebaseio.com", projectId: "ecocajou-gestion", storageBucket: "ecocajou-gestion.firebasestorage.app", messagingSenderId: "587096683474", appId: "1:587096683474:web:3e45c928103b43b9c58e0b" };
-        const app = initializeApp(firebaseConfig); const db = getDatabase(app);
-        window.firebaseDB = db; window.firebaseRef = ref; window.firebaseSet = set; window.firebaseGet = get;
-    </script>
-    <script src="script.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+            import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+            const firebaseConfig = { apiKey: "AIzaSyBrZRbqQf1XyquJZ43lIX1MG0utaoPbeNE", authDomain: "ecocajou-gestion.firebaseapp.com", databaseURL: "https://ecocajou-gestion-default-rtdb.firebaseio.com", projectId: "ecocajou-gestion", storageBucket: "ecocajou-gestion.firebasestorage.app", messagingSenderId: "587096683474", appId: "1:587096683474:web:3e45c928103b43b9c58e0b" };
+            const app = initializeApp(firebaseConfig); const db = getDatabase(app);
+            window.firebaseDB = db; window.firebaseRef = ref; window.firebaseSet = set; window.firebaseGet = get;
+        </script>
+       
+        <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

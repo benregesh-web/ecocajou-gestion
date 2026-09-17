@@ -15,102 +15,102 @@ const CATALOGUE = {
   "PCH013": { des: "OXYGENE CO2", unite: "KILOGRAMME", fam: "PRODUITS CHIMIQUES" },
   "PCH014": { des: "CARBURANT  GAZOIL", unite: "LITRES", fam: "PRODUITS CHIMIQUES" },
   "PCH015": { des: "ESSENCE SUPER", unite: "LITRES", fam: "PRODUITS CHIMIQUES" },
-  "PCH016": { des: "GRAISSE ALIMENTAIRE", unite: "KILOGRAMME", fam: "PRODUITS CHIMIQUES"},
+  "PCH016": { des: "GRAISSE ALIMENTAIRE", unite: "KILOGRAMME", fam: "PRODUITS CHIMIQUES" },
 
-    "HGN001": { des: "TORCHON DE TABLE", unite: "PIECE", fam: "HYGIENE" },
-    "HGN002": { des: "SERPILLERE", unite: "", fam: "HYGIENE" },
-    "HGN003": { des: "PAPIER D'HYGIENE", unite: "", fam: "HYGIENE" },
-    "HGN004": { des: "BALAIS A MANCHE", unite: "", fam: "HYGIENE" },
-    "HGN005": { des: "BALAIS TRADITIONNEL", unite: "", fam: "HYGIENE" },
-    "HGN006": { des: "SEAU", unite: "", fam: "HYGIENE" },
-    "HGN007": { des: "PELLE PLASTIQUE", unite: "", fam: "HYGIENE" },
-    "HGN008": { des: "EPONGE", unite: "", fam: "HYGIENE" },
-    "HGN009": { des: "EPONGE METALLIQUE", unite: "", fam: "HYGIENE" },  
-    "HGN010": { des: "BROSSE DE NETOYAGE", unite: "", fam: "HYGIENE" },
-    "HGN011": { des: "PELLE METALLIQUE", unite: "", fam: "HYGIENE" },
-    "HGN012": { des: "SAC DE POUBELLE 100", unite: "", fam: "HYGIENE" },
-    "HGN013": { des: "RACLETTE", unite: "", fam: "HYGIENE" },
-    "HGN014": { des: "SAC POUBELLE 50", unite: "", fam: "HYGIENE" },
-    "HGN015": { des: "SAC POUBELLE 130", unite: "", fam: "HYGIENE" },
-    "HGN016": { des: "SAC POUBELLE 240", unite: "", fam: "HYGIENE" },
-    "HGN017": { des: "PANIER A LINGE ", unite: "", fam: "HYGIENE" },
-    "HGN018": { des: "BAC A LINGE ", unite: "", fam: "HYGIENE" },
+  "HGN001": { des: "TORCHON DE TABLE", unite: "PIECE", fam: "HYGIENE" },
+  "HGN002": { des: "SERPILLERE", unite: "", fam: "HYGIENE" },
+  "HGN003": { des: "PAPIER D'HYGIENE", unite: "", fam: "HYGIENE" },
+  "HGN004": { des: "BALAIS A MANCHE", unite: "", fam: "HYGIENE" },
+  "HGN005": { des: "BALAIS TRADITIONNEL", unite: "", fam: "HYGIENE" },
+  "HGN006": { des: "SEAU", unite: "", fam: "HYGIENE" },
+  "HGN007": { des: "PELLE PLASTIQUE", unite: "", fam: "HYGIENE" },
+  "HGN008": { des: "EPONGE", unite: "", fam: "HYGIENE" },
+  "HGN009": { des: "EPONGE METALLIQUE", unite: "", fam: "HYGIENE" },
+  "HGN010": { des: "BROSSE DE NETOYAGE", unite: "", fam: "HYGIENE" },
+  "HGN011": { des: "PELLE METALLIQUE", unite: "", fam: "HYGIENE" },
+  "HGN012": { des: "SAC DE POUBELLE 100", unite: "", fam: "HYGIENE" },
+  "HGN013": { des: "RACLETTE", unite: "", fam: "HYGIENE" },
+  "HGN014": { des: "SAC POUBELLE 50", unite: "", fam: "HYGIENE" },
+  "HGN015": { des: "SAC POUBELLE 130", unite: "", fam: "HYGIENE" },
+  "HGN016": { des: "SAC POUBELLE 240", unite: "", fam: "HYGIENE" },
+  "HGN017": { des: "PANIER A LINGE ", unite: "", fam: "HYGIENE" },
+  "HGN018": { des: "BAC A LINGE ", unite: "", fam: "HYGIENE" },
 
-    "EPI001": { des: "CHAUSSON ", unite: "PAIRE", fam: "EPI" },
-    "EPI002": { des: "GANT DE MENAGE", unite: "PAIRE", fam: "EPI" },
-    "EPI003": { des: "BLOUSE JETABLE", unite: "", fam: "EPI" },
-    "EPI004": { des: "CHARLOTTE", unite: "", fam: "EPI" },
-    "EPI005": { des: "CACHE-NEZ VISITEUR", unite: "", fam: "EPI" },
-    "EPI006": { des: "BLOUSE ADMINISTRATION ", unite: "", fam: "EPI" },
-    "EPI007": { des: "BOUCHON D'OREILLE", unite: "", fam: "EPI" },
-    "EPI008": { des: "LUNETTE DE PROTECTION", unite: "", fam: "EPI" },
-    "EPI009": { des: "CASQUE DE PROTECTION", unite: "", fam: "EPI" },
-    "EPI010": { des: "BOTTE ORDINAIRE", unite: "", fam: "EPI" },
-    "EPI011": { des: "CHAUSSURE DE SECURITE BOTTE PVC", unite: "", fam: "EPI" },
-    "EPI012": { des: "CHAUSURE DE SECURITE", unite: "", fam: "EPI" },
-    "EPI013": { des: "BABOUCHE", unite: "", fam: "EPI" },
-    "EPI014": { des: "TENUE BLEU NUIT", unite: "", fam: "EPI" },
-    "EPI015": { des: "TENUE BLANC", unite: "", fam: "EPI" },
-    "EPI016": { des: "TENUE VERT", unite: "", fam: "EPI" },
-    "EPI017": { des: "TENUE KAKI", unite: "", fam: "EPI" },
-    "EPI018": { des: "TENUE MARRON", unite: "", fam: "EPI" },
-    "EPI019": { des: "TENUE GRIS", unite: "", fam: "EPI" },
-    "EPI020": { des: "TENUE BLEU CIEL", unite: "", fam: "EPI" },
-    "EPI021": { des: "TENUE ROSE", unite: "", fam: "EPI" },
-    "EPI022": { des: "TENUE VIOLET", unite: "", fam: "EPI" },
-    "EPI023": { des: "GANT DE FOUR", unite: "", fam: "EPI" },
+  "EPI001": { des: "CHAUSSON ", unite: "PAIRE", fam: "EPI" },
+  "EPI002": { des: "GANT DE MENAGE", unite: "PAIRE", fam: "EPI" },
+  "EPI003": { des: "BLOUSE JETABLE", unite: "", fam: "EPI" },
+  "EPI004": { des: "CHARLOTTE", unite: "", fam: "EPI" },
+  "EPI005": { des: "CACHE-NEZ VISITEUR", unite: "", fam: "EPI" },
+  "EPI006": { des: "BLOUSE ADMINISTRATION ", unite: "", fam: "EPI" },
+  "EPI007": { des: "BOUCHON D'OREILLE", unite: "", fam: "EPI" },
+  "EPI008": { des: "LUNETTE DE PROTECTION", unite: "", fam: "EPI" },
+  "EPI009": { des: "CASQUE DE PROTECTION", unite: "", fam: "EPI" },
+  "EPI010": { des: "BOTTE ORDINAIRE", unite: "", fam: "EPI" },
+  "EPI011": { des: "CHAUSSURE DE SECURITE BOTTE PVC", unite: "", fam: "EPI" },
+  "EPI012": { des: "CHAUSURE DE SECURITE", unite: "", fam: "EPI" },
+  "EPI013": { des: "BABOUCHE", unite: "", fam: "EPI" },
+  "EPI014": { des: "TENUE BLEU NUIT", unite: "", fam: "EPI" },
+  "EPI015": { des: "TENUE BLANC", unite: "", fam: "EPI" },
+  "EPI016": { des: "TENUE VERT", unite: "", fam: "EPI" },
+  "EPI017": { des: "TENUE KAKI", unite: "", fam: "EPI" },
+  "EPI018": { des: "TENUE MARRON", unite: "", fam: "EPI" },
+  "EPI019": { des: "TENUE GRIS", unite: "", fam: "EPI" },
+  "EPI020": { des: "TENUE BLEU CIEL", unite: "", fam: "EPI" },
+  "EPI021": { des: "TENUE ROSE", unite: "", fam: "EPI" },
+  "EPI022": { des: "TENUE VIOLET", unite: "", fam: "EPI" },
+  "EPI023": { des: "GANT DE FOUR", unite: "", fam: "EPI" },
 
-    "ERO001": { des: "SCOSH", unite: "ROULEAU", fam: "ERO" },
-    "ERO002": { des: "SCOSH ADHESIF", unite: "ROULEAU", fam: "ERO" },
-    "ERO003": { des: "PISSETTE 500ml", unite: "", fam: "ERO" },
-    "ERO004": { des: "DABA", unite: "", fam: "ERO" },
-    "ERO005": { des: "COUTEAN PELLING", unite: "", fam: "ERO" },
-    "ERO006": { des: "AIGUILLE", unite: "", fam: "ERO" },
-    "ERO007": { des: "PILE AAA 1,5", unite: "", fam: "ERO" },
-    "ERO008": { des: "PILE AA 1,5", unite: "", fam: "ERO" },
-    "ERO009": { des: "CORDE", unite: "", fam: "ERO" },
-    "ERO010": { des: "MACHETTE", unite: "", fam: "ERO" },
-    "ERO011": { des: "PALETTE DE SUPPORT PLASTIQUE", unite: "", fam: "ERO" },
-    "ERO012": { des: "RATEAU", unite: "", fam: "ERO" },
-    "ERO013": { des: "PALETTE DE SUPPORT NOIX BRUTE", unite: "", fam: "ERO" },
-    "ERO014": { des: "BOL PLASTIQUE", unite: "", fam: "ERO" },
-    "ERO015": { des: "BOL METALLIQUE", unite: "", fam: "ERO" },
-    "ERO016": { des: "PILE DE TORCHE 1,5V", unite: "", fam: "ERO" },
-    "ERO017": { des: "CALCULATRICE", unite: "", fam: "ERO" },
-    "ERO018": { des: "PELLE BECHE (bout rond)", unite: "", fam: "ERO" },
-    "ERO019": { des: "PELLE BECHE (bout carrée)", unite: "", fam: "ERO" },
-    "ERO020": { des: "BROUETTE", unite: "", fam: "ERO" },
-    "ERO021": { des: "BANDE ADHESIF REFLECHI 50 M", unite: "", fam: "ERO" },
-    "ERO022": { des: "BANDE ADHESIF REFLECHI 30 M", unite: "", fam: "ERO" },
-    "ERO023": { des: "BANDEROLE D'INTERDICTION", unite: "", fam: "ERO" },
-    "ERO024": { des: "BASSINE GBAGBO", unite: "", fam: "ERO" },
-    "ERO025": { des: "BASSINE ALLUMINIUM", unite: "", fam: "ERO" },
-    "ERO026": { des: "BACHE BLEU (4*5)", unite: "", fam: "ERO" },
-    "ERO027": { des: "PIOCHE", unite: "", fam: "ERO" },
+  "ERO001": { des: "SCOSH", unite: "ROULEAU", fam: "ERO" },
+  "ERO002": { des: "SCOSH ADHESIF", unite: "ROULEAU", fam: "ERO" },
+  "ERO003": { des: "PISSETTE 500ml", unite: "", fam: "ERO" },
+  "ERO004": { des: "DABA", unite: "", fam: "ERO" },
+  "ERO005": { des: "COUTEAN PELLING", unite: "", fam: "ERO" },
+  "ERO006": { des: "AIGUILLE", unite: "", fam: "ERO" },
+  "ERO007": { des: "PILE AAA 1,5", unite: "", fam: "ERO" },
+  "ERO008": { des: "PILE AA 1,5", unite: "", fam: "ERO" },
+  "ERO009": { des: "CORDE", unite: "", fam: "ERO" },
+  "ERO010": { des: "MACHETTE", unite: "", fam: "ERO" },
+  "ERO011": { des: "PALETTE DE SUPPORT PLASTIQUE", unite: "", fam: "ERO" },
+  "ERO012": { des: "RATEAU", unite: "", fam: "ERO" },
+  "ERO013": { des: "PALETTE DE SUPPORT NOIX BRUTE", unite: "", fam: "ERO" },
+  "ERO014": { des: "BOL PLASTIQUE", unite: "", fam: "ERO" },
+  "ERO015": { des: "BOL METALLIQUE", unite: "", fam: "ERO" },
+  "ERO016": { des: "PILE DE TORCHE 1,5V", unite: "", fam: "ERO" },
+  "ERO017": { des: "CALCULATRICE", unite: "", fam: "ERO" },
+  "ERO018": { des: "PELLE BECHE (bout rond)", unite: "", fam: "ERO" },
+  "ERO019": { des: "PELLE BECHE (bout carrée)", unite: "", fam: "ERO" },
+  "ERO020": { des: "BROUETTE", unite: "", fam: "ERO" },
+  "ERO021": { des: "BANDE ADHESIF REFLECHI 50 M", unite: "", fam: "ERO" },
+  "ERO022": { des: "BANDE ADHESIF REFLECHI 30 M", unite: "", fam: "ERO" },
+  "ERO023": { des: "BANDEROLE D'INTERDICTION", unite: "", fam: "ERO" },
+  "ERO024": { des: "BASSINE GBAGBO", unite: "", fam: "ERO" },
+  "ERO025": { des: "BASSINE ALLUMINIUM", unite: "", fam: "ERO" },
+  "ERO026": { des: "BACHE BLEU (4*5)", unite: "", fam: "ERO" },
+  "ERO027": { des: "PIOCHE", unite: "", fam: "ERO" },
 
-    "EMB001": { des: "BIG BAG", unite: "", fam: "EMBALLAGE" },
-    "EMB002": { des: "SAC BÔRÔ", unite: "", fam: "EMBALLAGE" },
-    "EMB003": { des: "SAC JUTES BIO", unite: "", fam: "EMBALLAGE" },
-    "EMB004": { des: "SAC JUTES CONVENTIONNEL", unite: "", fam: "EMBALLAGE" },
-    "EMB005": { des: "CARTON CASHEW 453*235*340", unite: "", fam: "EMBALLAGE" },
-    "EMB006": { des: "CARTON CASHEW 453*236*385", unite: "", fam: "EMBALLAGE" },
-    "EMB007": { des: "PLASTIQUE SOUS VIDE", unite: "", fam: "EMBALLAGE" },
-    "EMB008": { des: "BACHE EN POLYANE", unite: "", fam: "EMBALLAGE" },
+  "EMB001": { des: "BIG BAG", unite: "", fam: "EMBALLAGE" },
+  "EMB002": { des: "SAC BÔRÔ", unite: "", fam: "EMBALLAGE" },
+  "EMB003": { des: "SAC JUTES BIO", unite: "", fam: "EMBALLAGE" },
+  "EMB004": { des: "SAC JUTES CONVENTIONNEL", unite: "", fam: "EMBALLAGE" },
+  "EMB005": { des: "CARTON CASHEW 453*235*340", unite: "", fam: "EMBALLAGE" },
+  "EMB006": { des: "CARTON CASHEW 453*236*385", unite: "", fam: "EMBALLAGE" },
+  "EMB007": { des: "PLASTIQUE SOUS VIDE", unite: "", fam: "EMBALLAGE" },
+  "EMB008": { des: "BACHE EN POLYANE", unite: "", fam: "EMBALLAGE" },
 
-    "BUR001": { des: "TABOURET INOX GRAND", unite: "", fam: "BUREAU" },
-    "BUR002": { des: "MARKERS", unite: "", fam: "BUREAU" },
-    "BUR003": { des: "STYLO ORDINAIRE", unite: "", fam: "BUREAU" },
-    "BUR004": { des: "STYLO DETECTABLE", unite: "", fam: "BUREAU" },
-    "BUR005": { des: "RAMETTE A4", unite: "", fam: "BUREAU" },
-    "BUR006": { des: "TABOURET INOX PETIT", unite: "", fam: "BUREAU" },
-    "BUR007": { des: "CAHIER 300 PAGES", unite: "", fam: "BUREAU" },
-    "BUR008": { des: "CAHIER ETUDIANT 300", unite: "", fam: "BUREAU" },
-    "BUR009": { des: "TABLE RONDE PLASTIQUE", unite: "", fam: "BUREAU" },
-    "BUR010": { des: "CHAISE PLASTIQUE", unite: "", fam: "BUREAU" },
-    "BUR011": { des: "CARNET DE CAISSE", unite: "", fam: "BUREAU" },
-    "BUR012": { des: "CAHIER 100", unite: "", fam: "BUREAU" },
-    "BUR013": { des: "TRACEUSE", unite: "", fam: "BUREAU" },
-    "BUR014": { des: "RAMETTE A4 BRISTOL POUR CARTE DPM", unite: "", fam: "BUREAU" },
+  "BUR001": { des: "TABOURET INOX GRAND", unite: "", fam: "BUREAU" },
+  "BUR002": { des: "MARKERS", unite: "", fam: "BUREAU" },
+  "BUR003": { des: "STYLO ORDINAIRE", unite: "", fam: "BUREAU" },
+  "BUR004": { des: "STYLO DETECTABLE", unite: "", fam: "BUREAU" },
+  "BUR005": { des: "RAMETTE A4", unite: "", fam: "BUREAU" },
+  "BUR006": { des: "TABOURET INOX PETIT", unite: "", fam: "BUREAU" },
+  "BUR007": { des: "CAHIER 300 PAGES", unite: "", fam: "BUREAU" },
+  "BUR008": { des: "CAHIER ETUDIANT 300", unite: "", fam: "BUREAU" },
+  "BUR009": { des: "TABLE RONDE PLASTIQUE", unite: "", fam: "BUREAU" },
+  "BUR010": { des: "CHAISE PLASTIQUE", unite: "", fam: "BUREAU" },
+  "BUR011": { des: "CARNET DE CAISSE", unite: "", fam: "BUREAU" },
+  "BUR012": { des: "CAHIER 100", unite: "", fam: "BUREAU" },
+  "BUR013": { des: "TRACEUSE", unite: "", fam: "BUREAU" },
+  "BUR014": { des: "RAMETTE A4 BRISTOL POUR CARTE DPM", unite: "", fam: "BUREAU" },
 
 
 
@@ -176,64 +176,64 @@ function render() {
   let dEl = document.getElementById('dateEntree'); if (dEl) dEl.innerText = formatToday();
   let ds = document.getElementById('dateSortie'); if (ds) ds.innerText = formatToday();
 
-// ==== LISTE CODE FILTRÉE PAR FAMILLE ====
-let selA = document.getElementById('aCode');
-let selFam = document.getElementById('aFam');
+  // ==== LISTE CODE FILTRÉE PAR FAMILLE ====
+  let selA = document.getElementById('aCode');
+  let selFam = document.getElementById('aFam');
 
-function updateCodeListByFamille() {
-  let fam = selFam.value;
-  // Codes du catalogue de cette famille
-  let codesFiltres = Object.keys(CATALOGUE).filter(c => CATALOGUE[c].fam === fam);
-  // + codes des articles déjà créés de cette famille qui ne sont pas dans catalogue
-  articles.forEach(a => {
-    if (a.fam === fam &&!codesFiltres.includes(a.code)) {
-      codesFiltres.push(a.code);
-    }
-  });
-  codesFiltres.sort();
-  let currentCode = selA.value;
-  selA.innerHTML = `<option value="">-- CODE ${fam} (${codesFiltres.length}) --</option>` + codesFiltres.map(c => {
-    let d = CATALOGUE[c] || articles.find(x => x.code === c);
-    return `<option value="${c}">${c} - ${d? d.des : c}</option>`;
-  }).join('');
-  // Si on éditait un article, on le remet
-  if (currentCode && codesFiltres.includes(currentCode)) selA.value = currentCode;
-  // Vider designation/unite si changement de famille
-  if (selA.value === "") {
-    document.getElementById('aDes').value = "";
-    document.getElementById('aUnite').value = "";
-  }
-}
-
-if (selA && selFam) {
-  // 1. Au démarrage, on filtre selon la famille actuelle
-  if (selA.options.length === 0) {
-    updateCodeListByFamille();
-  }
-  // 2. Quand tu changes FAMILLE → on refiltre CODE
-  selFam.onchange = () => {
-    updateCodeListByFamille();
-  };
-  // 3. Quand tu choisis CODE → DESIGNATION + UNITE auto
-  selA.onchange = () => {
-    let code = selA.value;
-    let data = CATALOGUE[code] || articles.find(a => a.code === code);
-    if (data) {
-      document.getElementById('aDes').value = data.des;
-      document.getElementById('aUnite').value = data.unite;
-      document.getElementById('aFam').value = data.fam; // au cas où
-      document.getElementById('aDes').style.background = "#d8f5d8";
-      document.getElementById('aUnite').style.background = "#d8f5d8";
-      setTimeout(() => {
-        document.getElementById('aDes').style.background = "#e8f5e9";
-        document.getElementById('aUnite').style.background = "#e8f5e9";
-      }, 600);
-    } else {
+  function updateCodeListByFamille() {
+    let fam = selFam.value;
+    // Codes du catalogue de cette famille
+    let codesFiltres = Object.keys(CATALOGUE).filter(c => CATALOGUE[c].fam === fam);
+    // + codes des articles déjà créés de cette famille qui ne sont pas dans catalogue
+    articles.forEach(a => {
+      if (a.fam === fam && !codesFiltres.includes(a.code)) {
+        codesFiltres.push(a.code);
+      }
+    });
+    codesFiltres.sort();
+    let currentCode = selA.value;
+    selA.innerHTML = `<option value="">-- CODE ${fam} (${codesFiltres.length}) --</option>` + codesFiltres.map(c => {
+      let d = CATALOGUE[c] || articles.find(x => x.code === c);
+      return `<option value="${c}">${c} - ${d ? d.des : c}</option>`;
+    }).join('');
+    // Si on éditait un article, on le remet
+    if (currentCode && codesFiltres.includes(currentCode)) selA.value = currentCode;
+    // Vider designation/unite si changement de famille
+    if (selA.value === "") {
       document.getElementById('aDes').value = "";
       document.getElementById('aUnite').value = "";
     }
-  };
-}
+  }
+
+  if (selA && selFam) {
+    // 1. Au démarrage, on filtre selon la famille actuelle
+    if (selA.options.length === 0) {
+      updateCodeListByFamille();
+    }
+    // 2. Quand tu changes FAMILLE → on refiltre CODE
+    selFam.onchange = () => {
+      updateCodeListByFamille();
+    };
+    // 3. Quand tu choisis CODE → DESIGNATION + UNITE auto
+    selA.onchange = () => {
+      let code = selA.value;
+      let data = CATALOGUE[code] || articles.find(a => a.code === code);
+      if (data) {
+        document.getElementById('aDes').value = data.des;
+        document.getElementById('aUnite').value = data.unite;
+        document.getElementById('aFam').value = data.fam; // au cas où
+        document.getElementById('aDes').style.background = "#d8f5d8";
+        document.getElementById('aUnite').style.background = "#d8f5d8";
+        setTimeout(() => {
+          document.getElementById('aDes').style.background = "#e8f5e9";
+          document.getElementById('aUnite').style.background = "#e8f5e9";
+        }, 600);
+      } else {
+        document.getElementById('aDes').value = "";
+        document.getElementById('aUnite').value = "";
+      }
+    };
+  }
 
   let selE = document.getElementById('eCode'); let selS = document.getElementById('sCode'); let selM = document.getElementById('sMat');
   if (selE) {
@@ -265,3 +265,63 @@ if (selA && selFam) {
 }
 function exportExcel() { let csv = "DATE,CODE,DESIGNATION,QTE,TYPE\n"; historique.entrees.concat(entrees).forEach(e => { csv += `${e.date},${e.code},${e.des},${e.qte},ENTREE\n`; }); let blob = new Blob([csv], { type: 'text/csv' }); let a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'ECOCAJOU-' + getToday() + '.csv'; a.click(); }
 render();
+
+// === EXPORT LISTE AGENTS - ECOCAJOU ===
+function exportAgentsExcel() {
+  let rows = document.querySelectorAll("#tAgents tr");
+  if (rows.length == 0) { alert("Aucun agent à exporter"); return; }
+  let csv = "CODE;NOM;PRENOMS;SECTION\n";
+  rows.forEach(r => {
+    let cols = r.querySelectorAll("td");
+    if (cols.length >= 4) csv += `${cols[0].innerText};${cols[1].innerText};${cols[2].innerText};${cols[3].innerText}\n`;
+  });
+  let blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  let a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = "LISTE_AGENTS_ECOCAJOU_" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();
+}
+
+// --- IMPORTER LISTE AGENTS DEPUIS EXCEL - VERSION CORRIGEE ---
+function importerAgentsExcel(event) {
+  let file = event.target.files[0];
+  if (!file) return;
+  let reader = new FileReader();
+  reader.onload = function (e) {
+    try {
+      let data = new Uint8Array(e.target.result);
+      let workbook = XLSX.read(data, { type: 'array' });
+      let sheet = workbook.Sheets[workbook.SheetNames[0]];
+      let json = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+
+      if (json.length == 0) { alert("Fichier vide!"); return; }
+
+      let agents = JSON.parse(localStorage.getItem('ecocajou_agents') || '[]');
+      let count = 0;
+
+      json.forEach(row => {
+        // On accepte toutes les écritures CODE/Code/code
+        let code = (row.CODE || row.Code || row.code || "").toString().trim();
+        let nom = (row.NOM || row.Nom || row.nom || "").toString().trim();
+        let prenoms = (row.PRENOMS || row.Prenoms || row.prenoms || row.PRENOM || "").toString().trim();
+        let section = (row.SECTION || row.Section || row.section || "ADMINISTRATION").toString().trim();
+
+        if (!nom && !prenoms) return; // ligne vide on saute
+
+        // évite les doublons
+        if (code && agents.some(a => a.code == code)) return;
+
+        agents.push({ code: code || "AG" + Date.now() + count, nom, prenoms, section });
+        count++;
+      });
+
+      localStorage.setItem('ecocajou_agents', JSON.stringify(agents));
+      alert(count + " agents importés avec succès! Recharge la page.");
+      location.reload();
+
+    } catch (err) {
+      alert("Erreur: " + err.message);
+      console.error(err);
+    }
+  };
+  reader.readAsArrayBuffer(file);
+  event.target.value = "";
+}
