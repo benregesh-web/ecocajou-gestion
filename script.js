@@ -112,17 +112,7 @@ const CATALOGUE = {
   "BUR013": { des: "TRACEUSE", unite: "", fam: "BUREAU" },
   "BUR014": { des: "RAMETTE A4 BRISTOL POUR CARTE DPM", unite: "", fam: "BUREAU" },
 
-
-
-
-
-
-
-
-
-
 };
-
 
 let agents = JSON.parse(localStorage.getItem("ec_agents") || `[{"code":"EC_00054","nom":"SANGARE","prenom":"MOINA","section":"ENTRETIEN"}]`);
 let savedArts = JSON.parse(localStorage.getItem("ec_articles") || "[]"); let articles = savedArts.length > 0 ? savedArts : [];
@@ -280,7 +270,7 @@ function exportAgentsExcel() {
   a.download = "LISTE_AGENTS_ECOCAJOU_" + new Date().toISOString().slice(0, 10) + ".csv"; a.click();
 }
 
-// --- IMPORTER LISTE AGENTS DEPUIS EXCEL - VERSION CORRIGEE ---
+// --- IMPORTER LISTE AGENTS - VERSION FINALE CORRECTE ---
 function importerAgentsExcel(event) {
   let file = event.target.files[0];
   if (!file) return;
@@ -290,32 +280,44 @@ function importerAgentsExcel(event) {
       let data = new Uint8Array(e.target.result);
       let workbook = XLSX.read(data, { type: 'array' });
       let sheet = workbook.Sheets[workbook.SheetNames[0]];
-      let json = XLSX.utils.sheet_to_json(sheet, { defval: "" });
+      let allRows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
 
-      if (json.length == 0) { alert("Fichier vide!"); return; }
+      let headerIndex = -1;
+      for (let i = 0; i < allRows.length; i++) {
+        let rowStr = allRows[i].join(" ").toUpperCase();
+        if (rowStr.includes("CODE") && rowStr.includes("NOM")) {
+          headerIndex = i;
+          break;
+        }
+      }
+      if (headerIndex == -1) { alert("Entête CODE/NOM non trouvé!"); return; }
 
-      let agents = JSON.parse(localStorage.getItem('ecocajou_agents') || '[]');
+      let headers = allRows[headerIndex].map(h => h.toString().trim().toUpperCase());
+      let idxCode = headers.indexOf("CODE");
+      let idxNom = headers.indexOf("NOM");
+      let idxPrenoms = headers.findIndex(h => h.includes("PRENOM"));
+      let idxSection = headers.findIndex(h => h.includes("SECTION") || h.includes("SERVICE"));
+
       let count = 0;
+      for (let i = headerIndex + 1; i < allRows.length; i++) {
+        let r = allRows[i];
+        if (!r || r.length == 0) continue;
+        let code = (r[idxCode] || "").toString().trim().toUpperCase();
+        let nom = (r[idxNom] || "").toString().trim().toUpperCase();
+        let prenom = (r[idxPrenoms] || "").toString().trim().toUpperCase();
+        let section = (r[idxSection] || "").toString().trim().toUpperCase();
 
-      json.forEach(row => {
-        // On accepte toutes les écritures CODE/Code/code
-        let code = (row.CODE || row.Code || row.code || "").toString().trim();
-        let nom = (row.NOM || row.Nom || row.nom || "").toString().trim();
-        let prenoms = (row.PRENOMS || row.Prenoms || row.prenoms || row.PRENOM || "").toString().trim();
-        let section = (row.SECTION || row.Section || row.section || "ADMINISTRATION").toString().trim();
+        if (!nom && !prenom) continue;
+        if (code && agents.some(a => a.code == code)) continue;
 
-        if (!nom && !prenoms) return; // ligne vide on saute
-
-        // évite les doublons
-        if (code && agents.some(a => a.code == code)) return;
-
-        agents.push({ code: code || "AG" + Date.now() + count, nom, prenoms, section });
+        // CORRECTION ICI : on met prenom au singulier comme ton code l'attend
+        agents.push({ code: code || "AG" + Date.now() + count, nom, prenom, section: section || "ADMINISTRATION" });
         count++;
-      });
+      }
 
-      localStorage.setItem('ecocajou_agents', JSON.stringify(agents));
-      alert(count + " agents importés avec succès! Recharge la page.");
-      location.reload();
+      save(); // <-- TRÈS IMPORTANT : c'est save() qui affiche, pas localStorage direct
+      alert(count + " agents importés avec succès!");
+      render();
 
     } catch (err) {
       alert("Erreur: " + err.message);
